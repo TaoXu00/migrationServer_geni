@@ -1,10 +1,10 @@
 port=8088
 containerExposePort=5001
-ContainerStopDir=/home/xu/mininet/H1Dir
-lookupTableDir=/home/xu/thesis_file/MigSystem/receivedlookUpTables
-password=123
+ContainerStopDir=~/ContainerRestore
+lookupTableDir=lookupTable
+password=Linux+Penguin
 container=iperfserver
 image=xutao6688/iperfserver
-ContainerRestoreDir=/home/xu/mininet/H2Dir
-logfileDir=/home/xu/thesis_file/MigSystem/migrationServerLog
+ContainerRestoreDir=~/ContainerResotre
+logfileDir=log
 iperfTime=300
