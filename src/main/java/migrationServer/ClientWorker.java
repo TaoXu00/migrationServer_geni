@@ -46,6 +46,8 @@ public class ClientWorker extends Thread {
 	 private DataOutputStream ClientOut;
 	 private DataInputStream  ClientIn;
      private int fileNumber=0;
+	 private String baseDir=System.getProperty("user.home")+"/"+System.getProperty("migrationServerDirName")+"/";
+
 	public ClientWorker(Socket socket){
 		this.socket=socket;	
 	}
@@ -251,7 +253,8 @@ public class ClientWorker extends Thread {
 		   log="["+src+"]in MIGRATE mode.";
 		   writeTolog(log);
 		   Runtime r=Runtime.getRuntime();
-		   String checkpointDir=System.getProperty("ContainerStopDir");
+		   String checkpointDir=baseDir+System.getProperty("ContainerStopDir");
+		   System.out.println("checkpointdir:"+checkpointDir);
 		   String container=ip+"-"+System.getProperty("container"); 
 		   String[] cmd={"/bin/bash","-c","echo "+password+" | sudo -S docker checkpoint create --checkpoint-dir="+checkpointDir+" "+container+" checkpoint --leave-running"};
 		   Process p=r.exec(cmd);
@@ -485,7 +488,7 @@ public class ClientWorker extends Thread {
     	   String port=System.getProperty("containerExposePort");
     	   String bindport="-p "+port+":"+port;
     	   String newContainer=ip+"-"+System.getProperty("container");
-    	   String ContainerRestoreDir=System.getProperty("ContainerRestoreDir")+"/"+imageRestart;
+    	   String ContainerRestoreDir=baseDir+System.getProperty("ContainerRestoreDir")+"/"+imageRestart;
 		   String[] createContainer={"/bin/bash","-c","echo "+password+" | sudo -S  docker create --name "+newContainer+" "+bindport+" "+imageRestart};
 		   Process p1=r.exec(createContainer);	
 		   p1.waitFor();

@@ -1,7 +1,8 @@
 port=8088
 containerExposePort=5001
 ContainerStopDir=systemfiles/containerStop
-ContainerRestoreDir=systemfiles/containerResotre
+ContainerRestoreDir=systemfiles/containerRestore
+migrationServerDirName=migrationServer_geni
 lookupTableDir=systemfiles/lookupTable
 logfileDir=systemfiles/log
 password=Linux+Penguin

@@ -1,7 +1,7 @@
 #!/bin/bash
 mkdir systemfiles
 mkdir systemfiles/containerStop
-mkdir systemfiles/containerResotre
+mkdir systemfiles/containerRestore
 mkdir systemfiles/log
 mkdir systemfiles/lookupTable
 echo "start program..."
