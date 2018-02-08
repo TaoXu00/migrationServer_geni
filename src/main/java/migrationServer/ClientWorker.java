@@ -41,11 +41,11 @@ public class ClientWorker extends Thread {
 	 private String dest="destHost";
 	 int port=Integer.parseInt(System.getProperty("port"));
 	 String password=System.getProperty("password");
-	 DataOutputStream  serverOut;
-	 DataInputStream  serverIn;
-	 DataOutputStream ClientOut;
-	 DataInputStream  ClientIn; 
-     int fileNumber=0;
+	 private DataOutputStream  serverOut;
+	 private DataInputStream  serverIn;
+	 private DataOutputStream ClientOut;
+	 private DataInputStream  ClientIn;
+     private int fileNumber=0;
 	public ClientWorker(Socket socket){
 		this.socket=socket;	
 	}
@@ -178,7 +178,7 @@ public class ClientWorker extends Thread {
 		}
 	private int excuteDigitalFountain(String randomNumber, HashMap<String, Integer> lantencyTable,int keyNumber,String session_id) throws Exception {
 		// TODO Auto-generated method stub
-		writeTolog("i am excuting Digital_Fpuntain");
+		writeTolog("i am excuting Digital_Fountain");
 		HashMap<String,Double> probability=generateProbabilityTable(lantencyTable);
 		HashMap<Range,String> checkupTable=generateCheckupTable(probability);
 		LinkedList<String> selectedhosts=selectedHosts(checkupTable,keyNumber);

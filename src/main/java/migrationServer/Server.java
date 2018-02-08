@@ -44,7 +44,7 @@ public class Server {
    public void initializeFromConfigurationFileForJARFile() throws IOException{
 	   Properties mainProperties=new Properties(System.getProperties());
 	   FileInputStream file;
-	   String path="./configuration";
+	   String path= "configuration";
 	   file =new FileInputStream(path);
 	   mainProperties.load(file);
 	   System.setProperties(mainProperties);

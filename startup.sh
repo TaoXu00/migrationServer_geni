@@ -1,10 +1,9 @@
 #!/bin/bash
-cd ..
-mkdir ContainerStop
-mkdir ContainerResotre
-cd migrationServer_geni
-mkdir log
-mkdir lookupTable
+mkdir systemfiles
+mkdir systemfiles/containerStop
+mkdir systemfiles/containerResotre
+mkdir systemfiles/log
+mkdir systemfiles/lookupTable
 echo "start program..."
-mvn verify
+mvn clean install
 mvn exec:java -Dexec.mainClass=ServerApplication

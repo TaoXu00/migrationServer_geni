@@ -1,9 +1,9 @@
 port=8088
 containerExposePort=5001
-ContainerStopDir=~/ContainerStop
-ContainerRestoreDir=~/ContainerResotre
-lookupTableDir=lookupTable
-logfileDir=log
+ContainerStopDir=systemfiles/containerStop
+ContainerRestoreDir=systemfiles/containerResotre
+lookupTableDir=systemfiles/lookupTable
+logfileDir=systemfiles/log
 password=Linux+Penguin
 container=iperfserver
 image=xutao6688/iperfserver
