@@ -121,6 +121,9 @@ public class ClientWorker extends Thread {
 			    //System.out.println("iperf server stoped...."+getCurrentTime());
 			   // startIperfServer();
 			    writeTolog("iperf server restarted...."+getCurrentTime());
+			    Thread.sleep(120000);
+			    /****************************test container and migration directory clean up *************/
+			    cleanup();
 			    }
 			    else{
 			     dos.writeBytes("ERROR\n");
@@ -285,6 +288,8 @@ public class ClientWorker extends Thread {
 				  stopcontainer(container); 
 				  writeTolog("["+src+"]container "+container+" stopped"); 
 				  writeTolog("["+src+"]'SUCCESS' msg send to Migration Controller'");
+				  /***********************clean container and folder************************************/
+				  cleanup();
 			  }
 			  
 		   }
@@ -696,5 +701,8 @@ public class ClientWorker extends Thread {
       String time=sdf.format(date);
       return time;
       }
-
+      public void cleanup() throws Exception{
+		  String[] cmdScript = new String[]{"/bin/bash", "cleanup.sh"};
+		  Process procScript = Runtime.getRuntime().exec(cmdScript);
+	  }
 }
