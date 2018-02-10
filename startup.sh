@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo chmod +x cleanup.sh
 mkdir systemfiles
 mkdir systemfiles/containerStop
 mkdir systemfiles/containerRestore
