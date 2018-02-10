@@ -427,7 +427,7 @@ public class ClientWorker extends Thread {
 	private void startIperfClient(String IperfServer) throws Exception{
 		Runtime r=Runtime.getRuntime();
 		String time=System.getProperty("iperfTime");
-		String[] startIperf={"/bin/bash","-c","iperf -c "+IperfServer+" -t "+time+" -i 2"};
+		String[] startIperf={"/bin/bash","-c","iperf -c "+IperfServer+" -u -t "+time+" -i 2"};
 		Process P=r.exec(startIperf);
 	}
 	private void killIperfServer() throws Exception {
